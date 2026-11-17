@@ -112,3 +112,9 @@ Ready to implement:
 - For syntax that needs parser support (like strikethrough), the parser must be configured appropriately
 - The extension system is flexible and allows for both AST transformation and custom rendering
 - Table support requires "default" preset or explicit table enabling in markdown-it-py
+
+## 2026-10-18: documentation plugins
+
+- Use MaterialX search, inherited metadata and a topic index; keep ordered navigation in awesome-nav.
+- The documentation wrapper installs the plugins required by this site.
+- Strict documentation build and rendered output checks passed.

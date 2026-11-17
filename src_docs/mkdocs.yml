@@ -45,21 +45,7 @@ markdown_extensions:
   - pymdownx.tabbed: {alternate_style: true}
   - pymdownx.tasklist: {custom_checkbox: true}
 plugins:
-  - search
-nav:
-  - Home: index.md
-  - Getting started:
-      - Installation: installation.md
-      - Quickstart: quickstart.md
-  - User guide:
-      - The AST: ast.md
-      - Parsers: parsers.md
-      - Renderers: renderers.md
-      - Transformers: transformers.md
-      - Extensions: extensions.md
-      - Validation and utilities: validation.md
-  - Reference:
-      - API reference: api.md
-      - Architecture: architecture.md
-      - Known limitations: limitations.md
-      - Contributing: contributing.md
+  - materialx/meta
+  - materialx/tags
+  - awesome-nav
+  - materialx/search

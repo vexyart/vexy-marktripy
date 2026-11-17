@@ -8,6 +8,7 @@ cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 properdocs() {
   uvx --python 3.12 --from properdocs==1.6.7 \
     --with mkdocs-materialx==10.1.8 \
+    --with mkdocs-awesome-nav==3.3.0 \
     --with pymdown-extensions==11.0.1 \
     properdocs "$@"
 }

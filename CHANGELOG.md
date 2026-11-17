@@ -70,3 +70,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Dependencies
 - Core: fire (CLI), rich (terminal UI), markdown-it-py (parser), mistletoe (parser), loguru (logging)
 - Development: pytest, pytest-cov, ruff, black, hypothesis, mypy, twine
+
+## 2026-10-18: documentation plugins
+
+- Use MaterialX search, inherited metadata and a topic index; keep ordered navigation in awesome-nav.
+- The documentation wrapper installs the plugins required by this site.
+- Strict documentation build and rendered output checks passed.

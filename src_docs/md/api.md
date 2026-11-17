@@ -1,3 +1,8 @@
+---
+this_file: src_docs/md/api.md
+tags: [API]
+---
+
 # API reference
 
 This page lists every public module, class and function, with the page that explains it. The package has no top-level re-exports apart from `__version__`; import names from the module shown.

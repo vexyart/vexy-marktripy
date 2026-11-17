@@ -1,0 +1,19 @@
+# this_file: src_docs/md/.nav.yml
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: installation.md
+      - Quickstart: quickstart.md
+  - User guide:
+      - The AST: ast.md
+      - Parsers: parsers.md
+      - Renderers: renderers.md
+      - Transformers: transformers.md
+      - Extensions: extensions.md
+      - Validation and utilities: validation.md
+  - Reference:
+      - API reference: api.md
+      - Architecture: architecture.md
+      - Known limitations: limitations.md
+      - Contributing: contributing.md
+  - Topics: topics.md
