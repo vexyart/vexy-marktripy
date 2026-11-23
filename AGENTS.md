@@ -25,16 +25,13 @@ The `ref/` directory contains extensive research on 8+ Python Markdown packages.
 
 ## 4. Development Commands
 
-**Note**: The project is in research phase - no build/test infrastructure exists yet. When implementation begins, consider:
-
 ```bash
-# Recommended setup for new Python project
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv --python 3.12
-uv init
-uv add fire rich
-uv sync
+uv sync --dev
+uv run pytest -q
+./build.sh docs
 ```
+
+The strict docs build reads `src_docs/mkdocs.yml` and writes to `docs/`. Keep `extra.fly.chrome` set to `none` for this unofficial site. The build script pins fly-january 0.1.1.
 
 ## 5. Architecture Considerations
 

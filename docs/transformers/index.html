@@ -34,16 +34,21 @@
     
     
       
-        <title>Transformers - vexy-marktripy</title>
+        <title>Transformers - marktripy</title>
       
     
     
+  
       <link rel="stylesheet" href="../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a45159b5.min.css">
       
     
+  <link rel="stylesheet" data-fly-photoswipe href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+      integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/fly/fly.css?v=24c03d88bb">
+
     
 
     
@@ -67,6 +72,19 @@
 
     
     
+  
+  <script>try{if(sessionStorage.getItem("fly-l2")==="in"){document.documentElement.dataset.flyL2="in";sessionStorage.removeItem("fly-l2")}}catch(e){}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=arrow_back,arrow_forward,dark_mode,light_mode&display=block">
+  <script>try{document.fonts.load('20px "Material Symbols Outlined"',"arrow_backarrow_forwarddark_modelight_mode").then(function(f){if(f.length)document.documentElement.classList.add("fly-msym")})}catch(e){}</script>
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/cmv5add.css" data-fly-font>
+  <link rel="stylesheet" href="https://use.typekit.net/cna4jfp.css" data-fly-font>
+  <link rel="stylesheet" href="https://use.typekit.net/wck5koo.css" data-fly-font>
+
   </head>
   
   
@@ -79,7 +97,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass" class="fly-margin-left fly-chrome-none" data-fly-hue="indigo" data-fly-links="accent">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,13 +118,14 @@
     </div>
     
     
+  
       
 
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="vexy-marktripy" class="md-header__button md-logo" aria-label="vexy-marktripy" data-md-component="logo">
+    <a href=".." title="marktripy" class="md-header__button md-logo" aria-label="marktripy" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -120,7 +139,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            vexy-marktripy
+            marktripy
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -212,7 +231,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    vexyart/vexy-marktripy
+    GitHub
   </div>
 </a>
       </div>
@@ -221,6 +240,7 @@
   
 </header>
     
+
     <div class="md-container" data-md-component="container">
       
       
@@ -242,13 +262,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="vexy-marktripy" class="md-nav__button md-logo" aria-label="vexy-marktripy" data-md-component="logo">
+    <a href=".." title="marktripy" class="md-nav__button md-logo" aria-label="marktripy" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    vexy-marktripy
+    marktripy
   </label>
   
     <div class="md-nav__source">
@@ -258,7 +278,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    vexyart/vexy-marktripy
+    GitHub
   </div>
 </a>
     </div>
@@ -271,12 +291,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Home">
     
   
     Home
@@ -294,6 +315,7 @@
     
       
       
+  
   
   
   
@@ -319,7 +341,7 @@
             
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Getting started">
     
   
     Getting started
@@ -350,6 +372,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../installation/" class="md-nav__link">
         
@@ -374,6 +397,7 @@
             
               
                 
+  
   
   
   
@@ -411,6 +435,7 @@
       
   
   
+  
     
   
   
@@ -436,7 +461,7 @@
             
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="User guide">
     
   
     User guide
@@ -463,6 +488,7 @@
             
               
                 
+  
   
   
   
@@ -495,6 +521,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../parsers/" class="md-nav__link">
         
@@ -519,6 +546,7 @@
             
               
                 
+  
   
   
   
@@ -549,13 +577,13 @@
                 
   
   
+  
     
   
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -602,12 +630,14 @@
   
   
   
+  
+    
     
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Transformers
     </label>
     <ul class="md-nav__list" data-md-component="toc">
       
@@ -681,6 +711,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../extensions/" class="md-nav__link">
         
@@ -705,6 +736,7 @@
             
               
                 
+  
   
   
   
@@ -744,6 +776,7 @@
   
   
   
+  
     
     
     
@@ -765,7 +798,7 @@
             
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Reference">
     
   
     Reference
@@ -792,6 +825,7 @@
             
               
                 
+  
   
   
   
@@ -824,6 +858,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../architecture/" class="md-nav__link">
         
@@ -852,6 +887,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../limitations/" class="md-nav__link">
         
@@ -876,6 +912,7 @@
             
               
                 
+  
   
   
   
@@ -915,12 +952,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../topics/" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Topics">
     
   
     Topics
@@ -953,12 +991,14 @@
   
   
   
+  
+    
     
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Transformers
     </label>
     <ul class="md-nav__list" data-md-component="toc">
       
@@ -1035,7 +1075,7 @@
   
 
 
-<h1 id="transformers">Transformers<a class="headerlink" href="#transformers" title="Permanent link">&para;</a></h1>
+<h1 id="transformers">Transformers<a aria-label="Permanent link" class="headerlink" href="#transformers" title="Permanent link">&para;</a></h1>
 <p>A transformer takes a <code>Document</code>, changes it, and returns a <code>Document</code>. The package ships four, each with helper functions for one-line use.</p>
 <table>
 <thead>
@@ -1080,7 +1120,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">ParserRegistry</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"markdown-it"</span><span class="p">)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">md</span> <span class="o">=</span> <span class="n">MarkdownRenderer</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="heading-levels">Heading levels<a class="headerlink" href="#heading-levels" title="Permanent link">&para;</a></h2>
+<h2 id="heading-levels">Heading levels<a aria-label="Permanent link" class="headerlink" href="#heading-levels" title="Permanent link">&para;</a></h2>
 <p><code>HeadingLevelTransformer(config)</code> changes every heading's level. Configuration keys:</p>
 <table>
 <thead>
@@ -1140,7 +1180,7 @@
 <li><code>HeadingNormalizer()</code> is <code>HeadingLevelTransformer({"operation": "normalize"})</code>.</li>
 <li><code>increase_heading_levels(ast, amount=1)</code> and <code>decrease_heading_levels(ast, amount=1)</code> build the transformer and run it.</li>
 </ul>
-<h2 id="heading-ids">Heading IDs<a class="headerlink" href="#heading-ids" title="Permanent link">&para;</a></h2>
+<h2 id="heading-ids">Heading IDs<a aria-label="Permanent link" class="headerlink" href="#heading-ids" title="Permanent link">&para;</a></h2>
 <p><code>IDGeneratorTransformer(config)</code> stores a unique <code>id</code> attribute on matching nodes. Configuration keys:</p>
 <table>
 <thead>
@@ -1190,7 +1230,7 @@
 </code></pre></div>
 <p><code>HeadingIDGenerator(prefix="", overwrite=False)</code> targets headings only. <code>TableIDGenerator(prefix="table", overwrite=False)</code> targets tables. Tables have no text of their own, so a table's ID is built from the joined text of the cells inside the <code>Table</code> node: header cells <code>a</code> and <code>b</code> give <code>table-ab</code>. <code>add_ids_to_elements(ast, elements, prefix="", overwrite=False)</code> lets you pass any list of node types.</p>
 <p>The IDs appear in HTML output. <code>MarkdownRenderer</code> ignores them because Markdown has no heading-ID syntax.</p>
-<h2 id="table-of-contents">Table of contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<h2 id="table-of-contents">Table of contents<a aria-label="Permanent link" class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <p><code>TOCGenerator(config)</code> collects headings and builds a nested list of links. Configuration keys:</p>
 <table>
 <thead>
@@ -1272,7 +1312,7 @@
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="gu">### Detail</span>
 </code></pre></div>
 <p><code>generate_toc(ast, max_level=3, insert=True)</code> and <code>extract_toc(ast, max_level=3)</code> are shortcuts. <code>extract_toc</code> returns the TOC as a <code>Document</code> node (title heading plus list) without changing the input, or <code>None</code> if there are no headings in range. After any run, <code>TOCGenerator.get_toc()</code> returns the same node.</p>
-<h2 id="reference-style-links">Reference-style links<a class="headerlink" href="#reference-style-links" title="Permanent link">&para;</a></h2>
+<h2 id="reference-style-links">Reference-style links<a aria-label="Permanent link" class="headerlink" href="#reference-style-links" title="Permanent link">&para;</a></h2>
 <p><code>LinkReferenceTransformer(config)</code> gives every inline link a reference ID and appends the definitions at the end of the document. Configuration keys:</p>
 <table>
 <thead>
@@ -1317,7 +1357,7 @@
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">([</span><span class="n">link</span><span class="o">.</span><span class="n">href</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">collect_links</span><span class="p">(</span><span class="n">doc</span><span class="p">)])</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># ['https://python.org', 'https://python.org']</span>
 </code></pre></div>
-<h2 id="write-your-own-transformer">Write your own transformer<a class="headerlink" href="#write-your-own-transformer" title="Permanent link">&para;</a></h2>
+<h2 id="write-your-own-transformer">Write your own transformer<a aria-label="Permanent link" class="headerlink" href="#write-your-own-transformer" title="Permanent link">&para;</a></h2>
 <p>Subclass <code>Transformer</code>, implement <code>get_description()</code>, and add <code>visit_&lt;type&gt;</code> methods for the node types you care about.</p>
 <p>How the traversal works:</p>
 <ol>
@@ -1411,41 +1451,28 @@
 </div>
       </main>
       
+  
         <footer class="md-footer">
   
     
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-          
           <a href="../renderers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Renderers">
-            <div class="md-footer__button md-icon">
-              
+            <div class="md-footer__button md-icon fly-arrow fly-arrow--back" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Renderers
-              </div>
+              <div class="md-ellipsis">Renderers</div>
             </div>
           </a>
         
         
-          
           <a href="../extensions/" class="md-footer__link md-footer__link--next" aria-label="Next: Extensions">
             <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Extensions
-              </div>
+              <div class="md-ellipsis">Extensions</div>
             </div>
-            <div class="md-footer__button md-icon">
-              
+            <div class="md-footer__button md-icon fly-arrow fly-arrow--forward" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
             </div>
           </a>
@@ -1453,22 +1480,10 @@
       </nav>
     
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
   
-  
-    Made with
-    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
-      MaterialX
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
 </footer>
       
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -1481,8 +1496,12 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
+  
       <script src="../assets/javascripts/bundle.fc193f93.min.js"></script>
       
     
+  <script src="../assets/fly/fly-bridge.js?v=86c9984233"></script>
+  <script type="module" src="../assets/fly/fly.js?v=f51ac22526"></script>
+
   </body>
 </html>

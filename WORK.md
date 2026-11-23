@@ -118,3 +118,9 @@ Ready to implement:
 - Use MaterialX search, inherited metadata and a topic index; keep ordered navigation in awesome-nav.
 - The documentation wrapper installs the plugins required by this site.
 - Strict documentation build and rendered output checks passed.
+
+## Documentation theme
+
+- The strict ProperDocs build uses fly-january 0.1.1 with `chrome: none`. Local builds and CI share `src_docs/build.sh` and `src_docs/mkdocs.yml`.
+- `./build.sh docs` completed with zero warnings. All 15 HTML pages use the Fly assets and unbranded chrome. The favicon matches the installed MaterialX image.
+- The CI pytest command passed all 102 tests after correcting the flat-list fixture. Hypothesis had generated `- -`, which Markdown parses as a nested list.

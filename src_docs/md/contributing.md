@@ -56,9 +56,9 @@ This removes `dist/`, runs `uv build` and checks the result with `twine check`. 
 
 ## Build the documentation
 
-The documentation sources are the Markdown files in `src_docs/md/`. The configuration is `src_docs/mkdocs.yml`. The site is built with ProperDocs and the MaterialX theme into `docs/`, which GitHub Pages serves at <https://vexy.dev/vexy-marktripy/>.
+The documentation sources are the Markdown files in `src_docs/md/`. ProperDocs reads `src_docs/mkdocs.yml` and builds the site into `docs/` with the fly-january 0.1.1 theme. This unofficial site uses `extra.fly.chrome: none`. GitHub Pages serves the result at <https://vexy.dev/vexy-marktripy/>.
 
-1. Edit or add pages in `src_docs/md/`. Add new pages to `nav` in `src_docs/mkdocs.yml`.
+1. Edit or add pages in `src_docs/md/`. Add new pages to `src_docs/md/.nav.yml`.
 2. Preview the site while you edit:
 
     ```bash
@@ -67,7 +67,7 @@ The documentation sources are the Markdown files in `src_docs/md/`. The configur
 
     The preview runs at `http://127.0.0.1:8000`.
 
-3. Run the strict build. It fails on any warning, such as a broken link or a page missing from `nav`:
+3. Run the strict build. Any build warning causes it to fail.
 
     ```bash
     ./build.sh docs
