@@ -304,8 +304,8 @@ class TestMarkdownParsing:
     ))
     def test_parse_lists(self, items):
         """Parser should handle lists correctly."""
-        # Keep generated punctuation inside the item text so the list stays flat.
-        markdown = "\n".join(f"- Item {item}" for item in items)
+        # Create unordered list
+        markdown = "\n".join(f"- {item}" for item in items)
         parser = MarkdownItParser()
         ast = parser.parse(markdown)
         
