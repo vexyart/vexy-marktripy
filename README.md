@@ -282,7 +282,7 @@ We welcome contributions! Key areas:
 - Better round-trip fidelity
 - More transformer utilities
 
-Run `./build.sh docs` to build the documentation into `docs/` with strict checks. The site uses ProperDocs and the fly-january 0.1.1 theme with `chrome: none`. [Contributor guide](src_docs/md/contributing.md)
+Run `./build.sh docs` to build the documentation into `docs/` with strict checks. The site uses ProperDocs and the fly-january 0.2.1 theme with `chrome: none`. [Contributor guide](src_docs/md/contributing.md)
 
 ## License
 

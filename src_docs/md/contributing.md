@@ -56,7 +56,7 @@ This removes `dist/`, runs `uv build` and checks the result with `twine check`. 
 
 ## Build the documentation
 
-The documentation sources are the Markdown files in `src_docs/md/`. ProperDocs reads `src_docs/mkdocs.yml` and builds the site into `docs/` with the fly-january 0.1.1 theme. This unofficial site uses `extra.fly.chrome: none`. GitHub Pages serves the result at <https://vexy.dev/vexy-marktripy/>.
+The documentation sources are the Markdown files in `src_docs/md/`. ProperDocs reads `src_docs/mkdocs.yml` and builds the site into `docs/` with the fly-january 0.2.1 theme. This unofficial site uses `extra.fly.chrome: none`. GitHub Pages serves the result at <https://vexy.dev/vexy-marktripy/>.
 
 1. Edit or add pages in `src_docs/md/`. Add new pages to `src_docs/md/.nav.yml`.
 2. Preview the site while you edit:
