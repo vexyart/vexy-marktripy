@@ -31,7 +31,7 @@ uv run pytest -q
 ./build.sh docs
 ```
 
-The strict docs build reads `src_docs/mkdocs.yml` and writes to `docs/`. Keep `extra.fly.chrome` set to `none` for this unofficial site. The build script pins fly-january 0.2.1.
+The strict docs build reads `src_docs/mkdocs.yml` and writes to `docs/`. Keep `extra.fly.chrome` set to `none` for this unofficial site. The build script requires fly-january 0.3.0 or later.
 
 ## 5. Architecture Considerations
 
