@@ -1,267 +1,42 @@
-# marktripy Implementation Plan
+---
+this_file: PLAN.md
+---
 
-## Project Overview
+# Implementation plan
 
-`marktripy` is a Python package designed to provide seamless conversion between Markdown, AST (Abstract Syntax Tree), and back to Markdown. Based on extensive research of 8+ Python Markdown packages, this plan outlines a phased approach to building a flexible, extensible, and performant Markdown processing library.
+## Parsing and rendering
 
-## Core Objectives
+- **Preserve Markdown formatting and special characters on round trips.** Compare input and output for hard breaks, escaped punctuation and nested blocks. Check that the preserve_format option changes the result.
+- **Resolve differences between parser adapters.** Compare table bodies, images, fenced code and strikethrough from both backends, including the resulting HTML and Markdown. Check capability flags against actual output.
+- **Verify reference definitions and TOC marker replacement.** Render a reference link and parse it back. Place a TOC marker between paragraphs and check the generated list replaces it there.
 
-1. **Markdown to HTML conversion** - Programmatic conversion with customizable output
-2. **Markdown to AST conversion** - Create an intermediate representation for manipulation
-3. **AST manipulation** - Modify document structure (e.g., downgrade headings, add IDs)
-4. **AST to Markdown serialization** - Convert modified AST back to Markdown with high fidelity
-5. **Custom syntax support** - Extensible architecture for custom constructs (e.g., `++content++` → `<kbd>content</kbd>`)
+## Extensions and transformers
 
-## Technical Architecture Decisions
+- **Resolve extension dependencies.** Exercise registration in reverse dependency order, missing dependencies and cycles. The manager currently requires prerequisites to be registered first.
+- **Support MyST syntax, custom directives and custom blocks.** Check a directive through parsing, transformation and both renderers.
+- **Provide five runnable extension examples.** Run the examples against the documented extension hooks and check their output.
+- **Implement cross-references, citations and footnote reordering.** Check target resolution, repeated citations and footnote ordering after edits.
 
-### Parser Selection
+## Performance and CLI
 
-Based on the research findings, we will use a **dual-parser architecture**:
+- **Profile and optimise measured hot paths.** Compare the same documents against reference parsers and the original target of twice the fastest pure-Python runtime.
+- **Implement document caching and incremental parsing.** Compare cached and incrementally updated results with a fresh parse after an edit.
+- **Provide a Fire CLI with batch processing, watch mode and Rich output.** Run the installed command on one file, a batch and a changed file. Check output and error status.
 
-1. **Primary Parser**: `markdown-it-py` 
-   - Provides token stream and SyntaxTreeNode
-   - Excellent plugin architecture
-   - CommonMark compliant with GFM extensions
-   - Good balance of features and performance
+## Documentation and testing
 
-2. **Round-trip Engine**: `mistletoe`
-   - Perfect byte-exact round-trip conversion
-   - Native AST support
-   - Excellent for preserving formatting
+- **Check public API docstring coverage.** Compare the API reference against the public classes and methods and document any omissions.
+- **Write a cookbook with at least 20 examples and example projects.** Run the examples against the installed package.
+- **Raise test coverage above 95%.** Measure with pytest-cov and exercise uncovered branches.
+- **Verify fuzz coverage and security behaviour.** Exercise malformed Markdown with both parsers and check rendering of untrusted input. Reproduce the flat-list property with a dash as the item text.
 
-### Architecture Design
+## Packaging and maintenance
 
-```
-marktripy/
-├── core/
-│   ├── parser.py          # Abstract parser interface
-│   ├── ast.py             # Unified AST representation
-│   └── converter.py       # Conversion orchestration
-├── parsers/
-│   ├── markdown_it.py     # markdown-it-py adapter
-│   └── mistletoe.py       # mistletoe adapter
-├── renderers/
-│   ├── html.py            # HTML rendering
-│   └── markdown.py        # Markdown serialization
-├── transformers/
-│   ├── heading.py         # Heading manipulation
-│   ├── id_generator.py    # ID generation utilities
-│   └── base.py            # Base transformer class
-├── extensions/
-│   ├── base.py            # Extension interface
-│   └── kbd.py             # Example: ++kbd++ extension
-└── utils/
-    ├── slugify.py         # Text slugification
-    └── compatibility.py   # Parser compatibility layer
-```
+- **Create a conda-forge recipe.** Build the package from the recipe and import it in a fresh environment.
+- **Add issue templates and a code of conduct.** Check the issue forms and contributor-facing links.
+- **Set a release schedule.** Record the agreed cadence alongside the release instructions.
 
-## Implementation Phases
+## Longer-term research
 
-### Phase 1: Core Foundation (Week 1)
-
-#### 1.1 Project Setup
-- Initialize Python package structure with `uv`
-- Set up development environment with Python 3.12
-- Configure testing framework (pytest)
-- Set up linting and formatting (ruff, black)
-- Create basic CI/CD pipeline
-
-#### 1.2 Abstract Interfaces
-- Define abstract `Parser` interface
-- Create unified `ASTNode` class hierarchy
-- Design `Renderer` abstract base class
-- Implement `Transformer` base class
-
-#### 1.3 Basic Parser Integration
-- Implement `markdown-it-py` parser adapter
-- Create token-to-AST converter
-- Implement basic HTML renderer
-- Add simple test suite
-
-### Phase 2: AST Manipulation (Week 2)
-
-#### 2.1 AST Operations
-- Implement AST traversal utilities
-- Create visitor pattern for AST modification
-- Add node manipulation methods (insert, remove, replace)
-- Implement AST validation
-
-#### 2.2 Core Transformers
-- Heading level transformer (downgrade/upgrade)
-- ID generator transformer (with slugification)
-- Link reference transformer
-- Table of contents generator
-
-#### 2.3 Testing Infrastructure
-- Comprehensive AST manipulation tests
-- Property-based testing with hypothesis
-- Performance benchmarks
-
-### Phase 3: Round-trip Support (Week 3)
-
-#### 3.1 Mistletoe Integration
-- Implement mistletoe parser adapter
-- Create mistletoe AST to unified AST converter
-- Add mistletoe-based Markdown renderer
-- Implement format preservation logic
-
-#### 3.2 Markdown Serialization
-- Implement high-fidelity Markdown renderer
-- Add formatting preservation options
-- Handle edge cases (nested structures, special characters)
-- Create round-trip test suite
-
-#### 3.3 Parser Switching
-- Implement parser selection logic
-- Add parser feature detection
-- Create compatibility layer for parser differences
-- Document parser trade-offs
-
-### Phase 4: Extension System (Week 4)
-
-#### 4.1 Extension Architecture
-- Design plugin registration system
-- Implement extension lifecycle management
-- Create extension configuration system
-- Add extension dependency resolution
-
-#### 4.2 Built-in Extensions
-- Implement `++kbd++` extension as example
-- Add GitHub Flavored Markdown extensions
-- Create MyST-compatible extensions
-- Implement custom directive support
-
-#### 4.3 Extension Documentation
-- Create extension development guide
-- Add extension API reference
-- Provide extension examples
-- Document best practices
-
-### Phase 5: Advanced Features (Week 5)
-
-#### 5.1 Performance Optimization
-- Add caching layer for parsed documents
-- Implement incremental parsing support
-- Create performance profiling tools
-- Optimize hot paths
-
-#### 5.2 Advanced Transformers
-- Cross-reference resolver
-- Citation processor
-- Footnote reorganizer
-- Custom block handlers
-
-#### 5.3 CLI Interface
-- Create command-line interface with `fire`
-- Add batch processing support
-- Implement watch mode
-- Create rich terminal output with `rich`
-
-### Phase 6: Production Readiness (Week 6)
-
-#### 6.1 Documentation
-- Complete API documentation
-- Create user guide
-- Add cookbook with examples
-- Generate architecture diagrams
-
-#### 6.2 Testing & Quality
-- Achieve >95% test coverage
-- Add fuzzing tests
-- Create integration test suite
-- Implement security testing
-
-#### 6.3 Distribution
-- Prepare PyPI package
-- Create conda-forge recipe
-- Add GitHub Actions for releases
-- Set up documentation hosting
-
-## Technical Specifications
-
-### AST Node Structure
-
-```python
-class ASTNode:
-    type: str  # 'heading', 'paragraph', 'list', etc.
-    children: List[ASTNode]
-    attrs: Dict[str, Any]  # id, classes, etc.
-    content: Optional[str]
-    meta: Dict[str, Any]  # source position, parser-specific data
-```
-
-### Extension Interface
-
-```python
-class Extension:
-    def register_inline_rule(self, parser) -> None
-    def register_block_rule(self, parser) -> None
-    def transform_ast(self, ast: ASTNode) -> ASTNode
-    def render_html(self, node: ASTNode) -> str
-    def render_markdown(self, node: ASTNode) -> str
-```
-
-### Transformer Pattern
-
-```python
-class Transformer:
-    def visit(self, node: ASTNode) -> Optional[ASTNode]
-    def transform(self, ast: ASTNode) -> ASTNode
-```
-
-## Testing Strategy
-
-1. **Unit Tests**: Each component tested in isolation
-2. **Integration Tests**: Parser/renderer combinations
-3. **Round-trip Tests**: Markdown → AST → Markdown preservation
-4. **Compatibility Tests**: Cross-parser consistency
-5. **Performance Tests**: Benchmarks against reference implementations
-6. **Fuzzing**: Random input generation for robustness
-
-## Future Considerations
-
-### Version 2.0 Features
-- Streaming parser support for large documents
-- Async/await API for concurrent processing
-- WebAssembly compilation for browser usage
-- Language server protocol implementation
-- Real-time collaborative editing support
-
-### Potential Integrations
-- Jupyter notebook support
-- Sphinx documentation builder
-- Static site generators (Hugo, Jekyll)
-- Content management systems
-- Code documentation tools
-
-## Success Criteria
-
-1. **Feature Completeness**: All 5 core objectives achieved
-2. **Performance**: Within 2x of fastest pure-Python parser
-3. **Compatibility**: Support CommonMark + GFM + custom extensions
-4. **Stability**: Zero critical bugs in production
-5. **Adoption**: 1000+ downloads/month within 6 months
-6. **Documentation**: Comprehensive docs with >20 examples
-
-## Risk Assessment
-
-### Technical Risks
-- **Parser inconsistencies**: Mitigate with abstraction layer
-- **Performance bottlenecks**: Profile early and often
-- **Round-trip fidelity**: Extensive testing required
-
-### Mitigation Strategies
-- Start with well-tested parsers (markdown-it-py, mistletoe)
-- Implement comprehensive test suite from day one
-- Design for extensibility without sacrificing performance
-- Regular benchmarking against alternatives
-
-## Development Workflow
-
-1. **TDD Approach**: Write tests first for all features
-2. **Code Review**: All PRs require review
-3. **Documentation**: Update docs with each feature
-4. **Versioning**: Semantic versioning from 0.1.0
-5. **Release Cycle**: Monthly releases with patch updates as needed
-
-This plan provides a clear roadmap from initial implementation to production-ready library, leveraging the best features from existing Markdown processors while providing a unified, extensible API for Python developers.
+- **Assess streaming parsing and an async API.** Compare memory use on a large input and identify operations that benefit from asynchronous execution.
+- **Assess WebAssembly, language server and collaborative editing support.** Record feasibility and constraints for each proposed integration.

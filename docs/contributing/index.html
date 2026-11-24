@@ -1202,14 +1202,8 @@
 </ol>
 <p>On every push to <code>master</code> that touches <code>src_docs/</code>, the <code>Docs</code> workflow (<code>.github/workflows/docs.yml</code>) rebuilds <code>docs/</code> and commits the result.</p>
 <h2 id="release">Release<a aria-label="Permanent link" class="headerlink" href="#release" title="Permanent link">&para;</a></h2>
-<p><code>./publish.sh</code> releases to PyPI:</p>
-<ol>
-<li><code>uvx gitnextver</code> commits pending changes, creates the next <code>vX.Y.Z</code> tag and pushes.</li>
-<li>The script stops if <code>HEAD</code> has no <code>vX.Y.Z</code> tag.</li>
-<li><code>./build.sh package</code> builds and checks <code>dist/</code>.</li>
-<li><code>uv publish dist/*</code> uploads. It needs a credential such as <code>UV_PUBLISH_TOKEN</code> in the environment.</li>
-</ol>
-<p>Pushing the tag also starts the <code>Release</code> workflow (<code>.github/workflows/release.yml</code>). It builds the package, creates a GitHub release with the files, and uploads to PyPI with <code>twine upload --skip-existing</code>, so it does not fail when <code>publish.sh</code> already uploaded that version.</p>
+<p>After pushing the intended release commit to the default branch, run <code>./publish.sh</code> for the next patch version or <code>./publish.sh vX.Y.Z</code> for a specific version. The script uses the authenticated GitHub CLI to dispatch <code>.github/workflows/release.yml</code>. Pushing a version tag also triggers that workflow.</p>
+<p>The workflow builds the wheel and source distribution from the tag, attaches them to a GitHub release and uploads the same files to PyPI through Trusted Publishing. Configure the PyPI trusted publisher for project <code>marktripy</code>, repository <code>vexyart/vexy-marktripy</code>, workflow <code>release.yml</code> and environment <code>pypi</code>.</p>
 <h2 id="where-to-help">Where to help<a aria-label="Permanent link" class="headerlink" href="#where-to-help" title="Permanent link">&para;</a></h2>
 <p>The <a href="../limitations/">Known limitations</a> page lists confirmed defects, each with a reproduction. Fixing one of them, with a test, is the most useful contribution.</p>
 

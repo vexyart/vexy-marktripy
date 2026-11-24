@@ -79,14 +79,9 @@ On every push to `master` that touches `src_docs/`, the `Docs` workflow (`.githu
 
 ## Release
 
-`./publish.sh` releases to PyPI:
+After pushing the intended release commit to the default branch, run `./publish.sh` for the next patch version or `./publish.sh vX.Y.Z` for a specific version. The script uses the authenticated GitHub CLI to dispatch `.github/workflows/release.yml`. Pushing a version tag also triggers that workflow.
 
-1. `uvx gitnextver` commits pending changes, creates the next `vX.Y.Z` tag and pushes.
-2. The script stops if `HEAD` has no `vX.Y.Z` tag.
-3. `./build.sh package` builds and checks `dist/`.
-4. `uv publish dist/*` uploads. It needs a credential such as `UV_PUBLISH_TOKEN` in the environment.
-
-Pushing the tag also starts the `Release` workflow (`.github/workflows/release.yml`). It builds the package, creates a GitHub release with the files, and uploads to PyPI with `twine upload --skip-existing`, so it does not fail when `publish.sh` already uploaded that version.
+The workflow builds the wheel and source distribution from the tag, attaches them to a GitHub release and uploads the same files to PyPI through Trusted Publishing. Configure the PyPI trusted publisher for project `marktripy`, repository `vexyart/vexy-marktripy`, workflow `release.yml` and environment `pypi`.
 
 ## Where to help
 
